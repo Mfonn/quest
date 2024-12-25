@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk To Winnie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <span></span>
+            <div class="logo">WELCOME</div>
+            <ul class="menu">
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+            <div class="btn"></div>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <section class="video-section">
+            <div class="video-container">
+                <video src="./media/video.mp4" autoplay loop muted></video>
+            </div>
+            <div class="img-container">
+                <img src="./media/window.png" alt="" class="img">
+            </div>
+
+            <div class="text-content">
+                <div class="img_txt">
+                    <div class="title sm left">
+                        <span></span>
+                    </div>
+                    <div class="title bg left">
+                        <span></span>
+                    </div>
+                    <div class="title bg right n">
+                        <span></span>
+                    </div>
+                    <div class="title bg right">
+                        <span></span>
+                    </div>
+                </div>
+                <p class="txt-bottom">
+                </p>
+            </div>
+
+            <div class="v_container">
+                <div class="left-side">
+                    <div class="tv">
+                        <div class="bg">The</div>
+                        <div class="sm">Legend</div>
+                        <div class="bg bottom">Of The Lost Map</div>
+                    </div>
+                    <div class="text-container">
+                        <p>
+                            
+                        </p>
+                        <p>
+                            The magic you're looking for is in you
+
+                        </p>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <p>explore works <i class="fa-solid fa-arrow-right-long"></i></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="boxes-container">
+                <div class="columns box1">
+                    <div class="col col-1">
+                        <img src="./media/fire.webp" alt="">
+                        <img src="./media/fire2.webp" alt="">
+                    </div>
+                    <div class="col-2">
+                        <h1></h1>
+                        <span>Rules Of the Game</span>
+                        <div class="line"></div>
+                        <section class="text-box">
+                            <!-- <h2>Rules of the Game</h2> -->
+                            <ul>
+                                <li>You have 3 lives. Use them wisely!</li>
+                                <li>No speaking to anyone outside your team.</li>
+                                <li>No phones allowed during the quest.</li>
+                                <li>You will receive 3 clue cards to guide you.</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="col col-3">
+                        <img src="./media/fire.webp" alt="">
+                        <img src="./media/fire2.webp" alt="">
+                        <img src="./media/fire.webp" alt="">
+                    </div>
+                </div>
+                <div class="columns box2">
+                    <div class="col col-1">
+                        <img src="./media/water.webp" alt="">
+                        <img src="./media/WEBIMAGE.webp" alt="">
+                    </div>
+                    <div class="col-2">
+                        <section class="form-section">
+                            <h2>Choose Your Quest</h2>
+                            <p>Select your quest time and enter your secret name to begin your journey.</p>
+                            <form id="questForm">
+                                <label for="questTime">Select Your Quest Time:</label>
+                                <select id="questTime" name="questTime" required>
+                                    <option value="">-- Select a time --</option>
+                                    <option value="9:00 AM">9:00 AM</option>
+                                    <option value="10:00 AM">10:00 AM</option>
+                                    <option value="11:00 AM">11:00 AM</option>
+                                    <option value="12:00 PM">12:00 PM</option>
+                                    <option value="1:00 PM">1:00 PM</option>
+                                    <option value="2:00 PM">2:00 PM</option>
+                                    <option value="3:00 PM">3:00 PM</option>
+                                    <option value="4:00 PM">4:00 PM</option>
+                                    <option value="5:00 PM">5:00 PM</option>
+                                </select>
+                
+                                <label for="secretName">Enter Your Secret Name:</label>
+                                <input type="text" id="secretName" name="secretName" placeholder="Your secret name" required>
+                
+                                <button type="submit">Start Your Quest</button>
+                            </form>
+                        </section>
+                        </div>
+                    </div>
+                
+
+    <footer>
+        <div class="logo"><a href="#">BIOCIRCUIT</a></div>
+        <div class="btn">instagram</div>
+    </footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+<script src="./script.js"></script>
+<script>
+    document.getElementById('questForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const questTime = document.getElementById('questTime').value;
+        const secretName = document.getElementById('secretName').value;
+
+        if (!questTime || !secretName) {
+            alert('Please fill out all fields before submitting.');
+            return;
+        }
+
+        const emailBody = `Quest Time: ${questTime}%0D%0ASecret Name: ${secretName}`;
+        window.location.href = `mailto:mfonnta07@gmail.com?subject=Treasure Hunt Registration&body=${emailBody}`;
+    });
+</script>
+
+</html>
